@@ -1,0 +1,8 @@
+name: RedWorldGuardFlags
+main: de.redstoneworld.redworldguardflags.RedWorldGuardFlags
+version: 0.0.1-Snapshot
+api-version: 1.21
+description: Extra flags for Worldguard
+authors: [RedstoneFuture, Xaver106]
+website: https://redstoneworld.de
+depend: [ WorldGuard, NBTAPI ]

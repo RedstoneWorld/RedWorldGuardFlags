@@ -39,9 +39,6 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 
 ¹ If no definition is found, the default case is like the Vanilla behavior: allowed for all blocks (if the player still has building rights). As soon as a block has been defined, the flag is considered a whitelist and everything else is disallowed. For empty entries, the next lower region is requested as usual (inheritance without a combination). The DENY definition is queried before the ALLOW definition, which should be taken into account if the block definition overlaps!
 
-## License
-This project is licensed under the permissive [Apache 2.0 License](LICENSE).
-
 ## Development
 
 ### Event handling

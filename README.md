@@ -5,19 +5,32 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 
 ### Used Flag-Types
 
-| Type           | Description                                                                                                                                                                      | Example          |
-|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
-| Boolean        | Specify a normal boolean value via `allow` or `deny`.                                                                                                                            | `allow`          |
-| List of Blocks | Define a list of blocks with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats can be listed in sequence (without spaces). | `stone,tag=beds` |
-| Integer        | Specify a natural number for the corresponding flag. (The used value range and the representation depend on the specific flag.)                                                  | `5`              |
+| Type             | Description                                                                                                                                                                                    | Example             |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| Boolean          | Specify a normal boolean value via `allow` or `deny`.                                                                                                                                          | `allow`             |
+| List of Blocks   | Define a list of blocks with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats (see below) can be listed in sequence (without spaces).   | `stone,tag=beds`    |
+| List of Entities | Define a list of entities with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats (see below) can be listed in sequence (without spaces). | `sheep,tag=zombies` |
+| Integer          | Specify a natural number for the corresponding flag. (The used value range and the representation depend on the specific flag.)                                                                | `5`                 |
 
 ### Extended Object List
 
-- `MATERIAL` names
-- `MATERIAL` names with wildcards via "*"
-- Regex via "r="
-- Material-Tag starting with "#" or "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
-  <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)
+#### Materials
+
+- clean `MATERIAL` names
+- clean `MATERIAL` names with wildcards via "*"
+- [Regex](https://regexr.com/) definition via "r="
+- Material-Tag starting with "#" or "tag=" (see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Block_tags_2) 
+  _(Vanilla Minecraft implementation)_ and [PaperMC Java-Doc](https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html) 
+  _(Bukkit implementation)_ for the Material-Tag lists)
+
+#### EntityTypes
+
+- clean `ENTITY-TYPE` names
+- clean `ENTITY-TYPE` names with wildcards via "*"
+- [Regex](https://regexr.com/) definition via "r="
+- EntityType-Tag starting with "#" or "tag=" (see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Entity_type_tags_2) 
+  _(Vanilla Minecraft implementation)_ and [PaperMC Java-Doc](https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html) 
+  _(Bukkit implementation)_ for the EntityType-Tag lists)
 
 | Flag                       | Type              | Description                                                                                                                                                                                              | Default State |
 |----------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|

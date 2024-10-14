@@ -7,7 +7,7 @@ import com.sk89q.worldguard.protection.flags.SetFlag;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import com.sk89q.worldguard.protection.flags.registry.FlagConflictException;
 import com.sk89q.worldguard.protection.flags.registry.FlagRegistry;
-import de.redstoneworld.redworldguardflags.types.StringFlag;
+import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
 
 import java.util.logging.Level;
 

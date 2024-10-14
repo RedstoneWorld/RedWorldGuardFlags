@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.types;
+package de.redstoneworld.redworldguardflags.flagtypes;
 
 import com.sk89q.worldguard.protection.flags.Flag;
 import com.sk89q.worldguard.protection.flags.FlagContext;

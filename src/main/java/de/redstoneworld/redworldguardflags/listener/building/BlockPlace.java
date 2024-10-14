@@ -5,7 +5,7 @@ import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import de.redstoneworld.redworldguardflags.Flags;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
-import de.redstoneworld.redworldguardflags.types.StringFlag;
+import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
 import de.redstoneworld.redworldguardflags.util.BukkitUtil;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import de.redstoneworld.redutilities.material.MaterialHelper;

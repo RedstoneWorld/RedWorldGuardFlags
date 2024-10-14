@@ -54,7 +54,11 @@ public class BlockPlace implements Listener {
             return;
         }
         
-        int resetDelay = (int) set.queryValue(null, Flags.FlagEnum.RESET_BLOCKS.getFlagObj());
+        // Check if the Integer flag is set:
+        Object resetFlagResult = set.queryValue(null, Flags.FlagEnum.RESET_BLOCKS.getFlagObj());
+        int resetDelay = 0;
+        if (resetFlagResult != null) resetDelay = (int) resetFlagResult;
+        
         if (resetDelay > 0) {
             BlockState blockStateCache = event.getBlockReplacedState();
             

@@ -39,6 +39,9 @@ public class Flags {
         ALLOW_BREAK_BLOCKS (StringFlag.ALLOW_BREAK = new SetFlag<>("allow-break-blocks", new StringFlag(null, null))),
         DENY_BREAK_BLOCKS (StringFlag.DENY_BREAK = new SetFlag<>("deny-break-blocks", new StringFlag(null, null))),
         
+        ALLOW_INTERACT_BLOCKS (StringFlag.ALLOW_INTERACT = new SetFlag<>("allow-interact-blocks", new StringFlag(null, null))),
+        DENY_INTERACT_BLOCKS (StringFlag.DENY_INTERACT = new SetFlag<>("deny-interact-blocks", new StringFlag(null, null))),
+        
         RESET_BLOCKS (new IntegerFlag("reset-blocks", null));
         
         

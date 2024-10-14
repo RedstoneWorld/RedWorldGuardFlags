@@ -7,16 +7,12 @@ import de.redstoneworld.redutilities.material.MaterialHelper;
 import de.redstoneworld.redworldguardflags.Flags;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
-import de.redstoneworld.redworldguardflags.util.BukkitUtil;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.Material;
-import org.bukkit.block.BlockState;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Set;
 
@@ -40,19 +36,19 @@ public class PlayerInteract implements Listener {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getClickedBlock().getLocation());
         
         // Get the resulting MATERIAL list from the flag definition.
-        Set<Material> allowInteract = MaterialHelper.getMaterials(set.queryValue(null, StringFlag.ALLOW_INTERACT));
-        Set<Material> denyInteract = MaterialHelper.getMaterials(set.queryValue(null, StringFlag.DENY_INTERACT));
+        Set<Material> allowInteract = MaterialHelper.getMaterials(set.queryValue(null, StringFlag.ALLOW_BLOCK_INTERACT));
+        Set<Material> denyInteract = MaterialHelper.getMaterials(set.queryValue(null, StringFlag.DENY_BLOCK_INTERACT));
         
         if ((denyInteract != null) && (denyInteract.contains(targetMaterial))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled block-interaction because of the regional '" + Flags.FlagEnum.DENY_INTERACT_BLOCKS.getFlagObj().getName() 
-                    + "' flag result.");
+            plugin.getLogger().info("Cancelled block-interaction with " + event.getClickedBlock().getType() + " because of the regional '" 
+                    + Flags.FlagEnum.DENY_INTERACT_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowInteract != null) && (!allowInteract.contains(targetMaterial))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled block-interaction because it was not found in the regional '" 
+            plugin.getLogger().info("Cancelled block-interaction with " + event.getClickedBlock().getType() + " because it was not found in the regional '" 
                     + Flags.FlagEnum.ALLOW_INTERACT_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }

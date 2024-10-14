@@ -42,14 +42,14 @@ public class BlockPlace implements Listener {
         
         if ((denyPlace != null) && (denyPlace.contains(targetMaterial))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled block-place because of the regional '" + Flags.FlagEnum.DENY_PLACE_BLOCKS.getFlagObj().getName() 
-                    + "' flag result.");
+            plugin.getLogger().info("Cancelled block-place of " + event.getBlock().getType() + " because of the regional '" 
+                    + Flags.FlagEnum.DENY_PLACE_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowPlace != null) && (!allowPlace.contains(targetMaterial))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled block-place because it was not found in the regional '" 
+            plugin.getLogger().info("Cancelled block-place of " + event.getBlock().getType() + " because it was not found in the regional '" 
                     + Flags.FlagEnum.ALLOW_PLACE_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
@@ -62,8 +62,8 @@ public class BlockPlace implements Listener {
         if (resetDelay > 0) {
             BlockState blockStateCache = event.getBlockReplacedState();
             
-            plugin.getLogger().info("Allow temporary block-place because of the regional '" + Flags.FlagEnum.RESET_BLOCKS.getFlagObj().getName() 
-                    + "' flag result.");
+            plugin.getLogger().info("Allow temporary block-place of " + event.getBlock().getType() + " because of the regional '" 
+                    + Flags.FlagEnum.RESET_BLOCKS.getFlagObj().getName() + "' flag result.");
             
             new BukkitRunnable() {
                 public void run() {

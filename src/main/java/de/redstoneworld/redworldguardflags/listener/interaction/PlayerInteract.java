@@ -57,8 +57,8 @@ public class PlayerInteract implements Listener {
             return;
         }
         
-        plugin.getLogger().info("Allow block-interaction because of the regional '" + Flags.FlagEnum.ALLOW_INTERACT_BLOCKS.getFlagObj().getName() 
-                + "' flag result.");
+/*        plugin.getLogger().info("Allow block-interaction because of the regional '" + Flags.FlagEnum.ALLOW_INTERACT_BLOCKS.getFlagObj().getName() 
+                + "' flag result.");*/
         
     }
     

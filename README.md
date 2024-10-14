@@ -19,18 +19,18 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 - clean `MATERIAL` names
 - clean `MATERIAL` names with wildcards via "*"
 - [Regex](https://regexr.com/) definition via "r="
-- Material-Tag starting with "#" or "tag=" (see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Block_tags_2) 
+- Material-Tag starting with "#" or "tag=" - see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Block_tags_2) 
   _(Vanilla Minecraft implementation)_ and [PaperMC Java-Doc](https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html) 
-  _(Bukkit implementation)_ for the Material-Tag lists)
+  _(Bukkit implementation)_ for the Material-Tag lists
 
 #### EntityTypes
 
 - clean `ENTITY-TYPE` names
 - clean `ENTITY-TYPE` names with wildcards via "*"
 - [Regex](https://regexr.com/) definition via "r="
-- EntityType-Tag starting with "#" or "tag=" (see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Entity_type_tags_2) 
+- EntityType-Tag starting with "#" or "tag=" - see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Entity_type_tags_2) 
   _(Vanilla Minecraft implementation)_ and [PaperMC Java-Doc](https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html) 
-  _(Bukkit implementation)_ for the EntityType-Tag lists)
+  _(Bukkit implementation)_ for the EntityType-Tag lists
 
 | Flag                       | Type              | Description                                                                                                                                                                                              | Default State |
 |----------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|

@@ -5,11 +5,11 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 
 ### Used Flag-Types
 
-| Type           | Description                                                                                                                     | Example          |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------|------------------|
-| Boolean        | Specify a normal boolean value via `allow` or `deny`.                                                                           | `allow`          |
-| List of Blocks | Define a list of blocks with the extended spelling support of Minecraft objects by this plugin.                                 | `stone,tag=beds` |
-| Integer        | Specify a natural number for the corresponding flag. (The used value range and the representation depend on the specific flag.) | `5`              |
+| Type           | Description                                                                                                                                                                      | Example          |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
+| Boolean        | Specify a normal boolean value via `allow` or `deny`.                                                                                                                            | `allow`          |
+| List of Blocks | Define a list of blocks with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats can be listed in sequence (without spaces). | `stone,tag=beds` |
+| Integer        | Specify a natural number for the corresponding flag. (The used value range and the representation depend on the specific flag.)                                                  | `5`              |
 
 ### Extended Object List
 
@@ -36,13 +36,13 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 | `deny-place-blocks`        | List of Blocks    | Specifies which blocks can _not_ be place. ² (subordinate to the "build" / "block-place" flag and specified the restriction)                                                                             | `[]`          |
 | `allow-break-blocks`       | List of Blocks    | Specifies which blocks can be break. ² (subordinate to the "build" / "block-break" flag and specified the restriction)                                                                                   | `[]`          |
 | `deny-break-blocks`        | List of Blocks    | Specifies which blocks can _not_ be break. ² (subordinate to the "build" / "block-break" flag and specified the restriction)                                                                             | `[]`          |
-| `allow-interact-blocks`    | List of Blocks    | XXX                                                                                                                                                                                                      | `[]`          |
-| `deny-interact-blocks`     | List of Blocks    | XXX                                                                                                                                                                                                      | `[]`          |
+| `allow-interact-blocks`    | List of Blocks    | Specifies which (target) block can be interacted with. ² (subordinate to the "interact" flag)                                                                                                            | `[]`          |
+| `deny-interact-blocks`     | List of Blocks    | Specifies which (target) block can _not_ be interacted with. ² (subordinate to the "interact" flag)                                                                                                      | `[]`          |
 | `reset-blocks`             | Integer (Seconds) | Activate a block reset after a specified time. If the value is ≤ 0, the flag is ignored.                                                                                                                 | _null_        |
 
 ¹ No item can be taken from the trade inventory and there are no XPs. The increasing [career level](https://minecraft.wiki/w/Trading#Level) and [trade stop](https://minecraft.wiki/w/Trading#Trades) are displayed in the GUI, but this is only on the client side and resets itself after the entity is addressed again.
 
-² If no definition is found, the default case is like the Vanilla behavior: allowed for all blocks (if the player still has building rights). As soon as a block has been defined, the flag is considered a whitelist and everything else is disallowed. For empty entries, the next lower region is requested as usual (inheritance without a combination). The DENY definition is queried before the ALLOW definition, which should be taken into account if the block definition overlaps!
+² If no definition is found, the default case is like the Vanilla behavior: allowed for all blocks (if the player still has the primary region-rights like "build" or "interact"). As soon as a block has been defined, the flag is considered a whitelist and everything else is disallowed. For empty entries, the next lower region is requested as usual (inheritance without a combination). The DENY definition is queried before the ALLOW definition, which should be taken into account if the block definition overlaps!
 
 ## Development
 

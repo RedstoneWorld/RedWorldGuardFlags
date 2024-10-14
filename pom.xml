@@ -61,7 +61,7 @@
         <dependency>
             <groupId>de.redstoneworld.redutilities</groupId>
             <artifactId>RedUtilities</artifactId>
-            <version>0.0.15-Snapshot</version>
+            <version>0.0.16-Snapshot</version>
         </dependency>
         <dependency>
             <groupId>io.papermc.paper</groupId>

@@ -13,8 +13,10 @@ public class StringFlag extends Flag<String> {
     public static SetFlag<String> ALLOW_BREAK;
     public static SetFlag<String> DENY_BREAK;
     
-    public static SetFlag<String> ALLOW_INTERACT;
-    public static SetFlag<String> DENY_INTERACT;
+    public static SetFlag<String> ALLOW_BLOCK_INTERACT;
+    public static SetFlag<String> DENY_BLOCK_INTERACT;
+    public static SetFlag<String> ALLOW_ENTITY_INTERACT;
+    public static SetFlag<String> DENY_ENTITY_INTERACT;
     
     
     public StringFlag(String name, @Nullable RegionGroup defaultGroup) {

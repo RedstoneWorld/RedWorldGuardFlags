@@ -5,7 +5,6 @@ import com.sk89q.worldguard.protection.flags.StateFlag;
 import de.redstoneworld.redworldguardflags.Flags;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
-import io.papermc.paper.event.player.PlayerTradeEvent;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

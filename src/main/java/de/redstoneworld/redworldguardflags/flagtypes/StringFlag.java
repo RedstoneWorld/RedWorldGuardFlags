@@ -18,6 +18,8 @@ public class StringFlag extends Flag<String> {
     public static SetFlag<String> ALLOW_ENTITY_INTERACT;
     public static SetFlag<String> DENY_ENTITY_INTERACT;
     
+    public static SetFlag<String> ALLOW_ENTITY_DAMAGE;
+    public static SetFlag<String> DENY_ENTITY_DAMAGE;
     
     public StringFlag(String name, @Nullable RegionGroup defaultGroup) {
         super(name, defaultGroup);

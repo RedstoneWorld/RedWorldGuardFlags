@@ -7,6 +7,7 @@
 
 package de.redstoneworld.redworldguardflags;
 
+import de.redstoneworld.redworldguardflags.listener.damage.EntityDamageByEntity;
 import de.redstoneworld.redworldguardflags.listener.interaction.PlayerInteract;
 import de.redstoneworld.redworldguardflags.listener.interaction.PlayerInteractEntity;
 import de.redstoneworld.redworldguardflags.listener.misc.*;
@@ -39,6 +40,8 @@ public class RedWorldGuardFlags extends JavaPlugin {
         // register Events with Bukkit:
         pluginMgn.registerEvents(new BlockBreak(this), this);
         pluginMgn.registerEvents(new BlockPlace(this), this);
+        
+        pluginMgn.registerEvents(new EntityDamageByEntity(this), this);
         
         pluginMgn.registerEvents(new PlayerInteract(this), this);
         pluginMgn.registerEvents(new PlayerInteractEntity(this), this);

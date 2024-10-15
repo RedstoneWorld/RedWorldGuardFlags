@@ -44,6 +44,9 @@ public class Flags {
         ALLOW_INTERACT_ENTITY (StringFlag.ALLOW_ENTITY_INTERACT = new SetFlag<>("allow-interact-entity", new StringFlag(null, null))),
         DENY_INTERACT_ENTITY (StringFlag.DENY_ENTITY_INTERACT = new SetFlag<>("deny-interact-entity", new StringFlag(null, null))),
         
+        ALLOW_DAMAGE_ENTITY (StringFlag.ALLOW_ENTITY_DAMAGE = new SetFlag<>("allow-damage-entity", new StringFlag(null, null))),
+        DENY_DAMAGE_ENTITY (StringFlag.DENY_ENTITY_DAMAGE = new SetFlag<>("deny-damage-entity", new StringFlag(null, null))),
+        
         RESET_BLOCKS (new IntegerFlag("reset-blocks", null));
         
         

@@ -5,12 +5,12 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 
 ### Used Flag-Types
 
-| Type             | Description                                                                                                                                                                                    | Example             |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| Boolean          | Specify a normal boolean value via `allow` or `deny`.                                                                                                                                          | `allow`             |
-| List of Blocks   | Define a list of blocks with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats (see below) can be listed in sequence (without spaces).   | `stone,tag=beds`    |
-| List of Entities | Define a list of entities with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats (see below) can be listed in sequence (without spaces). | `sheep,tag=zombies` |
-| Integer          | Specify a natural number for the corresponding flag. (The used value range and the representation depend on the specific flag.)                                                                | `5`                 |
+| Type             | Description                                                                                                                                                                                    | Example          |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
+| Boolean          | Specify a normal boolean value via `allow` or `deny`.                                                                                                                                          | `allow`          |
+| List of Blocks   | Define a list of blocks with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats (see below) can be listed in sequence (without spaces).   | `stone,#beds`    |
+| List of Entities | Define a list of entities with the extended spelling support of Minecraft objects by this plugin. Multiple values in different formats (see below) can be listed in sequence (without spaces). | `sheep,#zombies` |
+| Integer          | Specify a natural number for the corresponding flag. (The used value range and the representation depend on the specific flag.)                                                                | `5`              |
 
 ### Extended Object List
 

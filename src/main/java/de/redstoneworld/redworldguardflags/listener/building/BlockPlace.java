@@ -73,12 +73,7 @@ public class BlockPlace implements Listener {
                 }
             }.runTaskLater(plugin, resetDelay * 20L);
             
-            return;
         }
-        
-/*        plugin.getLogger().info("Allow block-place because of the regional '" + Flags.FlagEnum.ALLOW_PLACE_BLOCKS.getFlagObj().getName() 
-                + "' flag result.");*/
-        
     }
     
 }

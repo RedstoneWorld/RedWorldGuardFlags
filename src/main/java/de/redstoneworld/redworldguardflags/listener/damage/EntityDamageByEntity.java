@@ -52,12 +52,8 @@ public class EntityDamageByEntity implements Listener {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled entity-damage with " + event.getEntityType() + " because it was not found in the regional '" 
                     + Flags.FlagEnum.ALLOW_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
-            return;
+            
         }
-        
-/*        plugin.getLogger().info("Allow block-interaction because of the regional '" + Flags.FlagEnum.ALLOW_INTERACT_BLOCKS.getFlagObj().getName() 
-                + "' flag result.");*/
-        
     }
     
 }

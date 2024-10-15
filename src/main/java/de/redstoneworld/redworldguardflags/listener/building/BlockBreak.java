@@ -73,12 +73,7 @@ public class BlockBreak implements Listener {
                 }
             }.runTaskLater(plugin, resetDelay * 20L);
             
-            return;
         }
-        
-/*        plugin.getLogger().info("Allow block-break because of the regional '" + Flags.FlagEnum.ALLOW_BREAK_BLOCKS.getFlagObj().getName() 
-                + "' flag result.");*/
-        
     }
     
 }

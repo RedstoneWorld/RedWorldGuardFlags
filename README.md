@@ -59,11 +59,11 @@ New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provi
 
 ¹ No item can be taken from the trade inventory and there are no XPs. The increasing [career level](https://minecraft.wiki/w/Trading#Level) and [trade stop](https://minecraft.wiki/w/Trading#Trades) are displayed in the GUI, but this is only on the client side and resets itself after the entity is addressed again.
 
-² If no definition is found, the default case is like the Vanilla behavior: allowed for all blocks / entities (if the player still has the primary region-rights like "build", "interact" or "damage-animals"). As soon as a block has been defined, the flag is considered a whitelist and everything else is disallowed. For empty entries, the next lower region is requested as usual (inheritance without a combination). The DENY definition is queried before the ALLOW definition, which should be taken into account if the block definition overlaps!
+² If the flag value is empty, the next lower region is requested as usual (inheritance without a combination). The default case (without entries) is like the Vanilla behavior: All blocks / entities are allowed for the action (if the player still has the primary region-rights like "build", "interact" or "damage-animals"). With existing entry, the "ALLOW" flag type is considered as a whitelist and everything else is disallowed, and the "DENY" flag type is considered as a blacklist and everything else is allowed. The "DENY" definition is queried before the "ALLOW" definition, which must be taken into account if both types are used!
 
 ## Development
 
 ### Event handling
 
-- `event.setCancelled(false);` means that the event will continue to be processed by WorldGuard in this context.
+- `event.setCancelled(false);` means that the event will continue to be processed by WorldGuard in this context (not used).
 - `event.setCancelled(true);` means that the event is canceled and WorldGuard does not continue to do anything natively.

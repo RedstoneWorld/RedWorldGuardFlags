@@ -22,7 +22,7 @@ public class PlayerFish implements Listener {
     public void onPlayerFish(PlayerFishEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getPlayer().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.ALLOW_FISHING.getFlagObj())) {
 
             event.setCancelled(true);

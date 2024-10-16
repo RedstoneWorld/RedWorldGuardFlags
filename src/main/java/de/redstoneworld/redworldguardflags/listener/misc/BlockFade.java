@@ -23,10 +23,10 @@ public class BlockFade implements Listener {
     public void onBlockFade(BlockFadeEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getBlock().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.FIRE_BURNING_OUT.getFlagObj())) {
 
-            // Check if the target block is FIRE
+            // Check if the target block is "FIRE":
             if ((event.getBlock().getType() == Material.FIRE) || (event.getBlock().getType() == Material.SOUL_FIRE)) {
                 event.setCancelled(true);
             }

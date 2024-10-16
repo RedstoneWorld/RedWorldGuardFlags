@@ -22,7 +22,7 @@ public class PlayerTrade implements Listener {
     public void onPlayerTrade(PlayerTradeEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getPlayer().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.ALLOW_TRADING.getFlagObj())) {
 
             event.setCancelled(true);

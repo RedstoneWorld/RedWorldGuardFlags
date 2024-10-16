@@ -62,7 +62,7 @@ public class LecternBookPlace implements Listener {
             bookItemStack.setAmount(1);
             lecternInventory.setBook(bookItemStack);
             
-            // Remove the placed book from inventory
+            // Remove the placed book from inventory:
             if (event.getPlayer().getGameMode() == GameMode.SURVIVAL) playerInventory.getItemInMainHand()
                     .setAmount(originalAmount - 1);
 

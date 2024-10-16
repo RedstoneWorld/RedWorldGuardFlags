@@ -35,7 +35,7 @@ public class CreatureSpawn implements Listener {
 
         // Spawn-egg using:
         if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.SPAWNER_EGG) {
-            // Check if the flag applies and if it is set to deny
+            // Check if the flag applies and if it is set to deny:
             if (set.testState(null, (StateFlag) Flags.FlagEnum.SPAWNEGG_USE.getFlagObj())) return;
             
             event.setCancelled(true);
@@ -43,7 +43,7 @@ public class CreatureSpawn implements Listener {
 
         // Spawn-egg dispensing:
         if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.DISPENSE_EGG) {
-            // Check if the flag applies and if it is set to deny
+            // Check if the flag applies and if it is set to deny:
             if (set.testState(null, (StateFlag) Flags.FlagEnum.SPAWNEGG_DISPENSE.getFlagObj())) return;
             
             event.setCancelled(true);

@@ -23,10 +23,10 @@ public class EntityChangeBlock implements Listener {
     public void onEntityChangeBlock(EntityChangeBlockEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getBlock().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.WEAVING_DEATH_PLACE.getFlagObj())) {
             
-            // Check whether the block change is a "COBWEB" block
+            // Check whether the block change is a "COBWEB" block:
             if (event.getTo() == Material.COBWEB) {
                 event.setCancelled(true);
             }

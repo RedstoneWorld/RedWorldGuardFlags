@@ -25,10 +25,10 @@ public class HangingBreak implements Listener {
         
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.BOAT_BREAKTHROUGH.getFlagObj())) {
             
-            // Check if a boat is in the near to the entity break
+            // Check if a boat is in the near to the entity break:
             if (!event.getEntity().getLocation().getNearbyEntitiesByType(Boat.class, 2).isEmpty()) {
                 event.setCancelled(true);
             }

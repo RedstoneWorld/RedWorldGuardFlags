@@ -22,7 +22,7 @@ public class EntityTargetLivingEntity implements Listener {
     public void onEntityTargetLivingEntity(EntityTargetLivingEntityEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.ENTITY_TARGET.getFlagObj())) {
 
             event.setCancelled(true);

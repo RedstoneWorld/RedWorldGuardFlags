@@ -23,10 +23,10 @@ public class EntityToggleGlide implements Listener {
     public void onEntityToggleGlide(EntityToggleGlideEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
 
-        // Check if the flag applies and if it is set to deny
+        // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) Flags.FlagEnum.ELYTRA_USE.getFlagObj())) {
 
-            // Check if the entity is a player
+            // Check if the entity is a player:
             if (event.getEntity() instanceof Player) {
                 event.setCancelled(true);
             }

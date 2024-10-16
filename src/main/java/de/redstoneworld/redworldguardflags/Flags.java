@@ -33,6 +33,7 @@ public class Flags {
         ALLOW_TRADING (new StateFlag("allow-trading", true)),
         ENTITY_TARGET (new StateFlag("entity-target", true)),
         FIRE_BURNING_OUT (new StateFlag("fire-burning-out", true)),
+        WEAVING_DEATH_PLACE (new StateFlag("weaving-death-place", true)),
         
         ALLOW_PLACE_BLOCKS (StringFlag.ALLOW_PLACE = new SetFlag<>("allow-place-blocks", new StringFlag(null, null))),
         DENY_PLACE_BLOCKS (StringFlag.DENY_PLACE = new SetFlag<>("deny-place-blocks", new StringFlag(null, null))),

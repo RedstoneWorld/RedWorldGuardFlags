@@ -68,6 +68,8 @@ public class FlagManager {
      */
     public void registerWorldGuardFlags() {
         
+        // Reference: WorldGuard API Usage at https://worldguard.enginehub.org/en/latest/developer/regions/custom-flags/#registering-new-flags
+        
         for (FlagManager.FlagEnum value : FlagManager.FlagEnum.values()) {
             this.registerFlag(value.getFlagObj());
         }

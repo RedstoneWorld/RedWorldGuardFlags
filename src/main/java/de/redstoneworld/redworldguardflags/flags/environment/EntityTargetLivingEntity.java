@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.listener.misc;
+package de.redstoneworld.redworldguardflags.flags.environment;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
@@ -8,22 +8,22 @@ import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerFishEvent;
+import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 
-public class PlayerFish implements Listener {
+public class EntityTargetLivingEntity implements Listener {
 
     private final RedWorldGuardFlags plugin;
 
-    public PlayerFish(RedWorldGuardFlags plugin) {
+    public EntityTargetLivingEntity(RedWorldGuardFlags plugin) {
         this.plugin = plugin;
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    public void onPlayerFish(PlayerFishEvent event) {
-        ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getPlayer().getLocation());
+    public void onEntityTargetLivingEntity(EntityTargetLivingEntityEvent event) {
+        ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
 
         // Check if the flag applies and if it is set to deny:
-        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ALLOW_FISHING.getFlagObj())) {
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ENTITY_TARGET.getFlagObj())) {
 
             event.setCancelled(true);
         }

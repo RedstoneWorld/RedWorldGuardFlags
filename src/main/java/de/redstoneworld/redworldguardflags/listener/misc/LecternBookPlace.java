@@ -2,7 +2,7 @@ package de.redstoneworld.redworldguardflags.listener.misc;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.GameMode;
@@ -36,7 +36,7 @@ public class LecternBookPlace implements Listener {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getPlayer().getLocation());
 
         // Check if the flag applies and if it is set to deny
-        if (set.testState(null, (StateFlag) Flags.FlagEnum.LECTERN_BOOK_PLACE.getFlagObj())) {
+        if (set.testState(null, (StateFlag) FlagManager.FlagEnum.LECTERN_BOOK_PLACE.getFlagObj())) {
 
             PlayerInventory playerInventory = event.getPlayer().getInventory();
             ItemStack bookItemStack = playerInventory.getItemInMainHand().clone();

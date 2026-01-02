@@ -4,7 +4,7 @@ import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import de.redstoneworld.redutilities.entity.EntityHelper;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
@@ -44,14 +44,14 @@ public class EntityDamageByEntity implements Listener {
         if ((denyInteract != null) && (denyInteract.contains(targetEntityType))) {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled entity-damage with " + event.getEntityType() + " because of the regional '" 
-                    + Flags.FlagEnum.DENY_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.DENY_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowInteract != null) && (!allowInteract.contains(targetEntityType))) {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled entity-damage with " + event.getEntityType() + " because it was not found in the regional '" 
-                    + Flags.FlagEnum.ALLOW_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.ALLOW_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
             
         }
     }

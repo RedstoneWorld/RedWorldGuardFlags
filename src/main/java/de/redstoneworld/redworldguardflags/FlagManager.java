@@ -11,12 +11,12 @@ import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
 
 import java.util.logging.Level;
 
-public class Flags {
+public class FlagManager {
 
     private final RedWorldGuardFlags plugin;
     
     
-    public Flags(RedWorldGuardFlags plugin) {
+    public FlagManager(RedWorldGuardFlags plugin) {
         this.plugin = plugin;
     }
 
@@ -68,7 +68,7 @@ public class Flags {
      */
     public void registerWorldGuardFlags() {
         
-        for (Flags.FlagEnum value : Flags.FlagEnum.values()) {
+        for (FlagManager.FlagEnum value : FlagManager.FlagEnum.values()) {
             this.registerFlag(value.getFlagObj());
         }
     }

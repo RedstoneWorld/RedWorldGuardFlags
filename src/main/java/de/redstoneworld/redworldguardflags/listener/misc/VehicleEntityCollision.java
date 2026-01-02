@@ -2,7 +2,7 @@ package de.redstoneworld.redworldguardflags.listener.misc;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.entity.Mob;
@@ -25,7 +25,7 @@ public class VehicleEntityCollision implements Listener {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
 
         // Check if the flag applies and if it is set to deny:
-        if (!set.testState(null, (StateFlag) Flags.FlagEnum.VEHICLE_ENTITY_COLLISION.getFlagObj())) {
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.VEHICLE_ENTITY_COLLISION.getFlagObj())) {
 
             // Check if the collided entity is a PLAYER or a MOB:
             if (event.getEntity() instanceof Player || event.getEntity() instanceof Mob) {

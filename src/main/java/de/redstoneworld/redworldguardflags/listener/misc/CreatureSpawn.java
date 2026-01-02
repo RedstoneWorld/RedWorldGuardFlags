@@ -2,7 +2,7 @@ package de.redstoneworld.redworldguardflags.listener.misc;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.event.EventHandler;
@@ -36,7 +36,7 @@ public class CreatureSpawn implements Listener {
         // Spawn-egg using:
         if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.SPAWNER_EGG) {
             // Check if the flag applies and if it is set to deny:
-            if (set.testState(null, (StateFlag) Flags.FlagEnum.SPAWNEGG_USE.getFlagObj())) return;
+            if (set.testState(null, (StateFlag) FlagManager.FlagEnum.SPAWNEGG_USE.getFlagObj())) return;
             
             event.setCancelled(true);
         }
@@ -44,7 +44,7 @@ public class CreatureSpawn implements Listener {
         // Spawn-egg dispensing:
         if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.DISPENSE_EGG) {
             // Check if the flag applies and if it is set to deny:
-            if (set.testState(null, (StateFlag) Flags.FlagEnum.SPAWNEGG_DISPENSE.getFlagObj())) return;
+            if (set.testState(null, (StateFlag) FlagManager.FlagEnum.SPAWNEGG_DISPENSE.getFlagObj())) return;
             
             event.setCancelled(true);
         }

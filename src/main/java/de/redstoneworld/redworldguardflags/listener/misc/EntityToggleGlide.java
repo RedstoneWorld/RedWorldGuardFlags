@@ -2,7 +2,7 @@ package de.redstoneworld.redworldguardflags.listener.misc;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.entity.Player;
@@ -24,7 +24,7 @@ public class EntityToggleGlide implements Listener {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
 
         // Check if the flag applies and if it is set to deny:
-        if (!set.testState(null, (StateFlag) Flags.FlagEnum.ELYTRA_USE.getFlagObj())) {
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ELYTRA_USE.getFlagObj())) {
 
             // Check if the entity is a player:
             if (event.getEntity() instanceof Player) {

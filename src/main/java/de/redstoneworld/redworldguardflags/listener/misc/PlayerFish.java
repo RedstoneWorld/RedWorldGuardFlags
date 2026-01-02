@@ -2,7 +2,7 @@ package de.redstoneworld.redworldguardflags.listener.misc;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
 import org.bukkit.event.EventHandler;
@@ -23,7 +23,7 @@ public class PlayerFish implements Listener {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getPlayer().getLocation());
 
         // Check if the flag applies and if it is set to deny:
-        if (!set.testState(null, (StateFlag) Flags.FlagEnum.ALLOW_FISHING.getFlagObj())) {
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ALLOW_FISHING.getFlagObj())) {
 
             event.setCancelled(true);
         }

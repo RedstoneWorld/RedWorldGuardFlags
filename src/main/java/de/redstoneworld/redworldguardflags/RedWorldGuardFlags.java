@@ -25,8 +25,8 @@ public class RedWorldGuardFlags extends JavaPlugin {
 	}
 	
 	public void onLoad() {
-        Flags flags = new Flags(this);
-        flags.registerWorldGuardFlags();
+        FlagManager flagManager = new FlagManager(this);
+        flagManager.registerWorldGuardFlags();
         
 	}
 

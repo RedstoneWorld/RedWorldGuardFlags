@@ -3,7 +3,7 @@ package de.redstoneworld.redworldguardflags.listener.building;
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
 import de.redstoneworld.redworldguardflags.util.BukkitUtil;
@@ -43,19 +43,19 @@ public class BlockPlace implements Listener {
         if ((denyPlace != null) && (denyPlace.contains(targetMaterial))) {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled block-place of " + event.getBlock().getType() + " because of the regional '" 
-                    + Flags.FlagEnum.DENY_PLACE_BLOCKS.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.DENY_PLACE_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowPlace != null) && (!allowPlace.contains(targetMaterial))) {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled block-place of " + event.getBlock().getType() + " because it was not found in the regional '" 
-                    + Flags.FlagEnum.ALLOW_PLACE_BLOCKS.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.ALLOW_PLACE_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         // Check if the Integer flag is set:
-        Object resetFlagResult = set.queryValue(null, Flags.FlagEnum.RESET_BLOCKS.getFlagObj());
+        Object resetFlagResult = set.queryValue(null, FlagManager.FlagEnum.RESET_BLOCKS.getFlagObj());
         int resetDelay = 0;
         if (resetFlagResult != null) resetDelay = (int) resetFlagResult;
         
@@ -63,7 +63,7 @@ public class BlockPlace implements Listener {
             BlockState blockStateCache = event.getBlockReplacedState();
             
             plugin.getLogger().info("Allow temporary block-place of " + event.getBlock().getType() + " because of the regional '" 
-                    + Flags.FlagEnum.RESET_BLOCKS.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.RESET_BLOCKS.getFlagObj().getName() + "' flag result.");
             
             new BukkitRunnable() {
                 public void run() {

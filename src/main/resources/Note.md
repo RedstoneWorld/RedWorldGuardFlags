@@ -11,7 +11,7 @@
      */
     private void registerFlag(Flag<?> flag) {
         
-        // Code modified, original from: https://worldguard.enginehub.org/en/latest/developer/regions/custom-flags/#registering-new-flags
+        // Code modified, original from: https://worldguard.enginehub.org/en/latest/developer/regions/custom-flagManager/#registering-new-flagManager
         FlagRegistry registry = WorldGuard.getInstance().getFlagRegistry();
         
         if (registeredFlags == null) {
@@ -42,9 +42,9 @@
     }
 
     /**
-     * Gets flags HashMap.
+     * Gets flagManager HashMap.
      *
-     * @return the flags HashMap
+     * @return the flagManager HashMap
      */
     public HashMap<Class<?>, HashMap<String, Flag<?>>> getFlags() {
         return registeredFlags;

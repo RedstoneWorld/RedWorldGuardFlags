@@ -4,7 +4,7 @@ import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import de.redstoneworld.redutilities.material.MaterialHelper;
-import de.redstoneworld.redworldguardflags.Flags;
+import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.flagtypes.StringFlag;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
@@ -42,14 +42,14 @@ public class PlayerInteract implements Listener {
         if ((denyInteract != null) && (denyInteract.contains(targetMaterial))) {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled block-interaction with " + event.getClickedBlock().getType() + " because of the regional '" 
-                    + Flags.FlagEnum.DENY_INTERACT_BLOCKS.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.DENY_INTERACT_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowInteract != null) && (!allowInteract.contains(targetMaterial))) {
             event.setCancelled(true);
             plugin.getLogger().info("Cancelled block-interaction with " + event.getClickedBlock().getType() + " because it was not found in the regional '" 
-                    + Flags.FlagEnum.ALLOW_INTERACT_BLOCKS.getFlagObj().getName() + "' flag result.");
+                    + FlagManager.FlagEnum.ALLOW_INTERACT_BLOCKS.getFlagObj().getName() + "' flag result.");
             
         }
     }

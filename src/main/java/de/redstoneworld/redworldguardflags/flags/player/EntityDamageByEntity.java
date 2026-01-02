@@ -43,14 +43,14 @@ public class EntityDamageByEntity implements Listener {
         
         if ((denyInteract != null) && (denyInteract.contains(targetEntityType))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled entity-damage with " + event.getEntityType() + " because of the regional '" 
+            plugin.getLogger().info("Cancelled entity-damage with " + targetEntityType + " because of the regional '" 
                     + FlagManager.FlagEnum.DENY_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowInteract != null) && (!allowInteract.contains(targetEntityType))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled entity-damage with " + event.getEntityType() + " because it was not found in the regional '" 
+            plugin.getLogger().info("Cancelled entity-damage with " + targetEntityType + " because it was not found in the regional '" 
                     + FlagManager.FlagEnum.ALLOW_DAMAGE_ENTITY.getFlagObj().getName() + "' flag result.");
             
         }

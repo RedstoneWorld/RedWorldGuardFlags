@@ -42,14 +42,14 @@ public class BlockBreak implements Listener {
         
         if ((denyBreak != null) && (denyBreak.contains(targetMaterial))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled block-break of " + event.getBlock().getType() + " because of the regional '" 
+            plugin.getLogger().info("Cancelled block-break of " + targetMaterial + " because of the regional '" 
                     + FlagManager.FlagEnum.DENY_BREAK_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowBreak != null) && (!allowBreak.contains(targetMaterial))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled block-break of " + event.getBlock().getType() + " because it was not found in the regional '" 
+            plugin.getLogger().info("Cancelled block-break of " + targetMaterial + " because it was not found in the regional '" 
                     + FlagManager.FlagEnum.ALLOW_BREAK_BLOCKS.getFlagObj().getName() + "' flag result.");
             return;
         }
@@ -62,7 +62,7 @@ public class BlockBreak implements Listener {
         if (resetDelay > 0) {
             BlockState blockStateCache = event.getBlock().getState();
             
-            plugin.getLogger().info("Allow temporary block-break of " + event.getBlock().getType() + " because of the regional '" 
+            plugin.getLogger().info("Allow temporary block-break of " + targetMaterial + " because of the regional '" 
                     + FlagManager.FlagEnum.RESET_BLOCKS.getFlagObj().getName() + "' flag result.");
             
             new BukkitRunnable() {

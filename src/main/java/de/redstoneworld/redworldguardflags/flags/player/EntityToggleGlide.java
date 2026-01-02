@@ -1,5 +1,7 @@
 package de.redstoneworld.redworldguardflags.flags.player;
 
+import com.sk89q.worldguard.LocalPlayer;
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import de.redstoneworld.redworldguardflags.FlagManager;
@@ -21,15 +23,19 @@ public class EntityToggleGlide implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onEntityToggleGlide(EntityToggleGlideEvent event) {
-        ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getEntity().getLocation());
-
+        if (!(event.getEntity() instanceof Player)) return;
+        Player player = (Player) event.getEntity();
+        
+        LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
+        
+        if (!WorldGuardUtil.isRestrictedWorld(localPlayer.getWorld()) || WorldGuardUtil.hasWorldBypassPermission(localPlayer)) return;
+        
+        ApplicableRegionSet set = WorldGuardUtil.getRegionSet(player.getLocation());
+        
         // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ELYTRA_USE.getFlagObj())) {
-
-            // Check if the entity is a player:
-            if (event.getEntity() instanceof Player) {
-                event.setCancelled(true);
-            }
+            
+            event.setCancelled(true);
         }
 
     }

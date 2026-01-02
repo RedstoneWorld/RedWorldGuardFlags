@@ -1,5 +1,7 @@
 package de.redstoneworld.redworldguardflags.flags.player;
 
+import com.sk89q.worldguard.LocalPlayer;
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import de.redstoneworld.redworldguardflags.FlagManager;
@@ -33,7 +35,14 @@ public class LecternBookPlace implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onPlayerInteract(PlayerInteractEvent event) {
-        ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getPlayer().getLocation());
+        if (event.getClickedBlock() == null) return;
+        Block clickedBlock = event.getClickedBlock();
+        
+        LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(event.getPlayer());
+        
+        if (!WorldGuardUtil.isRestrictedWorld(localPlayer.getWorld()) || WorldGuardUtil.hasWorldBypassPermission(localPlayer)) return;
+        
+        ApplicableRegionSet set = WorldGuardUtil.getRegionSet(clickedBlock.getLocation());
 
         // Check if the flag applies and if it is set to deny
         if (set.testState(null, (StateFlag) FlagManager.FlagEnum.LECTERN_BOOK_PLACE.getFlagObj())) {
@@ -41,15 +50,13 @@ public class LecternBookPlace implements Listener {
             PlayerInventory playerInventory = event.getPlayer().getInventory();
             ItemStack bookItemStack = playerInventory.getItemInMainHand().clone();
             if ((bookItemStack.getType() != Material.WRITABLE_BOOK) && (bookItemStack.getType() != Material.WRITTEN_BOOK)) return;
+            
+            if (clickedBlock.getType() != Material.LECTERN) return;
 
-            Block block = event.getClickedBlock();
-            if (block == null) return;
-            if (block.getType() != Material.LECTERN) return;
-
-            if (!(block.getBlockData() instanceof Lectern lecternData)) return;
+            if (!(clickedBlock.getBlockData() instanceof Lectern lecternData)) return;
             if (lecternData.hasBook()) return;
 
-            BlockState state = block.getState();
+            BlockState state = clickedBlock.getState();
             if (!(state instanceof InventoryHolder holder)) return;
 
             Inventory inventory = holder.getInventory();

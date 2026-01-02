@@ -26,7 +26,6 @@ public class PlayerInteractEntity implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
-        
         LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(event.getPlayer());
         EntityType targetEntityType = event.getRightClicked().getType();
         
@@ -40,14 +39,14 @@ public class PlayerInteractEntity implements Listener {
         
         if ((denyInteract != null) && (denyInteract.contains(targetEntityType))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled entity-interaction with " + event.getRightClicked().getType() + " because of the regional '" 
+            plugin.getLogger().info("Cancelled entity-interaction with " + targetEntityType + " because of the regional '" 
                     + FlagManager.FlagEnum.DENY_INTERACT_ENTITY.getFlagObj().getName() + "' flag result.");
             return;
         }
         
         if ((allowInteract != null) && (!allowInteract.contains(targetEntityType))) {
             event.setCancelled(true);
-            plugin.getLogger().info("Cancelled entity-interaction with " + event.getRightClicked().getType() + " because it was not found in the regional '" 
+            plugin.getLogger().info("Cancelled entity-interaction with " + targetEntityType + " because it was not found in the regional '" 
                     + FlagManager.FlagEnum.ALLOW_INTERACT_ENTITY.getFlagObj().getName() + "' flag result.");
             
         }

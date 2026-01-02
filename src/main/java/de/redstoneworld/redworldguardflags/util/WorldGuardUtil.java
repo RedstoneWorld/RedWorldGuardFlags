@@ -12,7 +12,16 @@ import com.sk89q.worldguard.protection.regions.RegionQuery;
 import org.bukkit.Location;
 
 public class WorldGuardUtil {
-    
+
+    /**
+     * This method return the "ApplicableRegionSet" for the region-flag check.
+     * 
+     * Note: The location must be the correct target of the event based on the context of the 
+     * Event-Listener and the flag.
+     * 
+     * @param location (Location) the target location for the region-flag check
+     * @return (ApplicableRegionSet) the set of the WorldGuard regions based on the target location
+     */
     public static ApplicableRegionSet getRegionSet(Location location) {
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         RegionQuery query = container.createQuery();

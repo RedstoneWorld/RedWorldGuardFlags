@@ -49,7 +49,7 @@ public class RedWorldGuardFlags extends JavaPlugin {
         pluginMgn.registerEvents(new EntityTargetLivingEntity(this), this);
         pluginMgn.registerEvents(new EntityToggleGlide(this), this);
         pluginMgn.registerEvents(new HangingBreak(this), this);
-        pluginMgn.registerEvents(new LecternBookPlace(this), this);
+        pluginMgn.registerEvents(new PlayerInteractLectern(this), this);
         pluginMgn.registerEvents(new PlayerFish(this), this);
         pluginMgn.registerEvents(new VehicleEntityCollision(this), this);
 

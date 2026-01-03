@@ -18,7 +18,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.*;
 
-public class LecternBookPlace implements Listener {
+public class PlayerInteractLectern implements Listener {
 
     private final RedWorldGuardFlags plugin;
 
@@ -29,7 +29,7 @@ public class LecternBookPlace implements Listener {
      * (or activated "build" or "block-place" flag). For this purpose, there is now the new 
      * "lectern-book-place" flag that has been implemented here.
      */
-    public LecternBookPlace(RedWorldGuardFlags plugin) {
+    public PlayerInteractLectern(RedWorldGuardFlags plugin) {
         this.plugin = plugin;
     }
 

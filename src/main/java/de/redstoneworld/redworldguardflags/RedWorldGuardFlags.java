@@ -34,26 +34,24 @@ public class RedWorldGuardFlags extends JavaPlugin {
         PluginManager pluginMgn = getServer().getPluginManager();
         
         // register Events with Bukkit:
-        pluginMgn.registerEvents(new BlockBreak(this), this);
-        pluginMgn.registerEvents(new BlockPlace(this), this);
-        
-        pluginMgn.registerEvents(new EntityDamageByEntity(this), this);
-        
-        pluginMgn.registerEvents(new PlayerInteract(this), this);
-        pluginMgn.registerEvents(new PlayerInteractEntity(this), this);
-        
         pluginMgn.registerEvents(new BlockDispense(this), this);
         pluginMgn.registerEvents(new BlockFade(this), this);
         pluginMgn.registerEvents(new CreatureSpawn(this), this);
         pluginMgn.registerEvents(new EntityChangeBlock(this), this);
         pluginMgn.registerEvents(new EntityTargetLivingEntity(this), this);
-        pluginMgn.registerEvents(new EntityToggleGlide(this), this);
         pluginMgn.registerEvents(new HangingBreak(this), this);
-        pluginMgn.registerEvents(new PlayerInteractLectern(this), this);
-        pluginMgn.registerEvents(new PlayerFish(this), this);
         pluginMgn.registerEvents(new VehicleEntityCollision(this), this);
 
-
+        pluginMgn.registerEvents(new BlockBreak(this), this);
+        pluginMgn.registerEvents(new BlockPlace(this), this);
+        pluginMgn.registerEvents(new EntityDamageByEntity(this), this);
+        pluginMgn.registerEvents(new EntityToggleGlide(this), this);
+        pluginMgn.registerEvents(new PlayerFish(this), this);
+        pluginMgn.registerEvents(new PlayerInteract(this), this);
+        pluginMgn.registerEvents(new PlayerInteractEntity(this), this);
+        pluginMgn.registerEvents(new PlayerInteractLectern(this), this);
+        
+        
         // register Events with PaperMC:
         PaperLib.suggestPaper(this);
         

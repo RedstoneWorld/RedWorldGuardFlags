@@ -36,9 +36,9 @@ Minecraft Block Materials and Entity-Types may be defined in different ways. The
 
 ### Player Flags (for Non-Member)
 
-"Player Flags" are flags that usually represent restrictive settings to protect the region. There are dependent of player memberships and only apply to non-members of the specific region.
+"Player Flags" are flags that usually represent restrictive settings to protect the region or limit the gameplay feature for the player. It depends on the membership of the player in the specific region: The flag setting only applies to "non-members" (= not defined as "Owner" or "Member" in the region) and without admin / bypass permission for WorldGuard in the target world.
 
-The flag update after a flag change is dependent on the specific flag. Some flags are applied to players immediately through verification at all relevant events. Others are applied through a regular check in the backend.
+The flag update after a flag change is dependent on the specific flag. Some flags are applied to players immediately through verification at all relevant events. Others are applied through a regular check in the backend. (Currently, there are no flags in this plugin that are only applied to the player when they enter the region.)
 
 | Flag                    | Value-Type        | Description                                                                                                   | Default State |
 |-------------------------|-------------------|---------------------------------------------------------------------------------------------------------------|---------------|

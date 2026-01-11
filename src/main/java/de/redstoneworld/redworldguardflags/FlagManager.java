@@ -34,6 +34,11 @@ public class FlagManager {
         ENTITY_TARGET (new StateFlag("entity-target", true)),
         FIRE_BURNING_OUT (new StateFlag("fire-burning-out", true)),
         WEAVING_DEATH_PLACE (new StateFlag("weaving-death-place", true)),
+        INVENTORY_CLICK (new StateFlag("inventory-click", true)),
+        ENTITY_LOOT_ITEMS (new StateFlag("entity-loot-items", true)),
+        ENTITY_EATING_DESTROY (new StateFlag("entity-eating-destroy", true)),
+        STONE_GENERATION (new StateFlag("stone-generation", true)),
+        SIGN_EDIT (new StateFlag("sign-edit", true)),
         
         ALLOW_PLACE_BLOCKS (StringFlag.ALLOW_PLACE = new SetFlag<>("allow-place-blocks", new StringFlag(null, null))),
         DENY_PLACE_BLOCKS (StringFlag.DENY_PLACE = new SetFlag<>("deny-place-blocks", new StringFlag(null, null))),

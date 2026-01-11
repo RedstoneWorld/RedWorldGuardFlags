@@ -1,4 +1,4 @@
-# RedWorldguardFlags
+# RedWorldGuardFlags
 New helpful [WorldGuard](https://dev.bukkit.org/projects/worldguard) Flags provided and supported by the [RedstoneWorld](https://redstoneworld.de) development team.
 
 ## Used Flag-Types

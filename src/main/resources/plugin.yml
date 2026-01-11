@@ -2,7 +2,7 @@ name: RedWorldGuardFlags
 main: de.redstoneworld.redworldguardflags.RedWorldGuardFlags
 version: 0.2.0-Snapshot
 api-version: 1.21
-description: Extra flags for Worldguard
+description: Extra flags for WorldGuard
 authors: [RedstoneFuture, Xaver106]
 website: https://redstoneworld.de
 depend: [ WorldGuard, NBTAPI ]

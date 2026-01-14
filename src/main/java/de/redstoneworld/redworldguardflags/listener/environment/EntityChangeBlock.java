@@ -42,7 +42,6 @@ public class EntityChangeBlock implements Listener {
             if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ENTITY_EATING_DESTROY.getFlagObj())) {
                 event.setCancelled(true);
             }
-            return;
         }
     }
 

@@ -27,7 +27,6 @@ public class EntityDeath implements Listener {
             
             // Removing the dropped items:
             event.getDrops().clear();
-            
         }
 
     }

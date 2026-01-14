@@ -43,6 +43,7 @@ public class EntityChangeBlock implements Listener {
                 event.setCancelled(true);
             }
         }
+        
     }
 
 }

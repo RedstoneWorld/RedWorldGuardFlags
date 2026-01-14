@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.flags.player;
+package de.redstoneworld.redworldguardflags.listener.player;
 
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
@@ -11,38 +11,31 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.Inventory;
+import org.bukkit.event.entity.EntityToggleGlideEvent;
 
-public class InventoryClick implements Listener {
+public class EntityToggleGlide implements Listener {
 
     private final RedWorldGuardFlags plugin;
 
-    public InventoryClick(RedWorldGuardFlags plugin) {
+    public EntityToggleGlide(RedWorldGuardFlags plugin) {
         this.plugin = plugin;
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    public void onInventoryClick(InventoryClickEvent event) {
-        if (!(event.getWhoClicked() instanceof Player)) return;
-        Player player = (Player) event.getWhoClicked();
+    public void onEntityToggleGlide(EntityToggleGlideEvent event) {
+        if (!(event.getEntity() instanceof Player)) return;
+        Player player = (Player) event.getEntity();
         
         LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
         
         if (!WorldGuardUtil.isRestrictedWorld(localPlayer.getWorld()) || WorldGuardUtil.hasWorldBypassPermission(localPlayer)) return;
         
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(player.getLocation());
-
+        
         // Check if the flag applies and if it is set to deny:
-        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.INVENTORY_CLICK.getFlagObj())) {
-
-            Inventory inventory = event.getClickedInventory();
-            if (inventory == null) return;
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.ELYTRA_USE.getFlagObj())) {
             
-            if (inventory.getType() == InventoryType.PLAYER) {
-                event.setCancelled(true);
-            }
+            event.setCancelled(true);
         }
 
     }

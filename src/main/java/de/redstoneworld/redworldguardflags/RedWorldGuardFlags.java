@@ -7,8 +7,8 @@
 
 package de.redstoneworld.redworldguardflags;
 
-import de.redstoneworld.redworldguardflags.flags.environment.*;
-import de.redstoneworld.redworldguardflags.flags.player.*;
+import de.redstoneworld.redworldguardflags.listener.environment.*;
+import de.redstoneworld.redworldguardflags.listener.player.*;
 import io.papermc.lib.PaperLib;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.flags.player;
+package de.redstoneworld.redworldguardflags.listener.player;
 
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
@@ -7,15 +7,11 @@ import com.sk89q.worldguard.protection.flags.StateFlag;
 import de.redstoneworld.redworldguardflags.FlagManager;
 import de.redstoneworld.redworldguardflags.RedWorldGuardFlags;
 import de.redstoneworld.redworldguardflags.util.WorldGuardUtil;
-import org.bukkit.GameMode;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.type.HangingSign;
-import org.bukkit.block.data.type.Lectern;
 import org.bukkit.block.data.type.WallHangingSign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

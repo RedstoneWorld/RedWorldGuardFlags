@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.flags.environment;
+package de.redstoneworld.redworldguardflags.listener.environment;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;

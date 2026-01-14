@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.flags.environment;
+package de.redstoneworld.redworldguardflags.listener.environment;
 
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.StateFlag;
@@ -9,26 +9,25 @@ import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockFormEvent;
+import org.bukkit.event.block.BlockFadeEvent;
 
-public class BlockForm implements Listener {
+public class BlockFade implements Listener {
 
     private final RedWorldGuardFlags plugin;
 
-    public BlockForm(RedWorldGuardFlags plugin) {
+    public BlockFade(RedWorldGuardFlags plugin) {
         this.plugin = plugin;
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    public void onBlockForm(BlockFormEvent event) {
+    public void onBlockFade(BlockFadeEvent event) {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getBlock().getLocation());
 
         // Check if the flag applies and if it is set to deny:
-        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.STONE_GENERATION.getFlagObj())) {
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.FIRE_BURNING_OUT.getFlagObj())) {
 
-            // Check if the generated result is one of the solid blocks:
-            if ((event.getNewState().getType() == Material.STONE) || (event.getNewState().getType() == Material.COBBLESTONE) 
-                    || (event.getNewState().getType() == Material.OBSIDIAN)) {
+            // Check if the target block is a fire block:
+            if ((event.getBlock().getType() == Material.FIRE) || (event.getBlock().getType() == Material.SOUL_FIRE)) {
                 event.setCancelled(true);
             }
         }

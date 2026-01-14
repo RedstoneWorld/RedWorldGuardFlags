@@ -1,4 +1,4 @@
-package de.redstoneworld.redworldguardflags.flags.player;
+package de.redstoneworld.redworldguardflags.listener.player;
 
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;

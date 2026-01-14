@@ -19,7 +19,7 @@ Minecraft Block Materials and Entity-Types may be defined in different ways. The
 - clean `MATERIAL` names
 - clean `MATERIAL` names with wildcards via "*"
 - [Regex](https://regexr.com/) definition via "r="
-- Material-Tag starting with "#" or "tag=" - see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Block_tags_2) 
+- Material-Tag starting with "#" or "tag=" - see [Minecraft-Wiki](https://minecraft.wiki/w/Block_tag_(Java_Edition)) 
   _(Vanilla Minecraft implementation)_ and [PaperMC Java-Doc](https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html) 
   _(Bukkit implementation)_ for the Material-Tag lists
 
@@ -28,7 +28,7 @@ Minecraft Block Materials and Entity-Types may be defined in different ways. The
 - clean `ENTITY-TYPE` names
 - clean `ENTITY-TYPE` names with wildcards via "*"
 - [Regex](https://regexr.com/) definition via "r="
-- EntityType-Tag starting with "#" or "tag=" - see [Minecraft-Wiki](https://minecraft.wiki/w/Tag#Entity_type_tags_2) 
+- EntityType-Tag starting with "#" or "tag=" - see [Minecraft-Wiki](https://minecraft.wiki/w/Entity_type_tag_(Java_Edition)) 
   _(Vanilla Minecraft implementation)_ and [PaperMC Java-Doc](https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html) 
   _(Bukkit implementation)_ for the EntityType-Tag lists
 

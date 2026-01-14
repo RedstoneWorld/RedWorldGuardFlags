@@ -17,11 +17,11 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 import java.util.Set;
 
-public class PlayerInteract implements Listener {
+public class PlayerInteractBlock implements Listener {
 
     private final RedWorldGuardFlags plugin;
 
-    public PlayerInteract(RedWorldGuardFlags plugin) {
+    public PlayerInteractBlock(RedWorldGuardFlags plugin) {
         this.plugin = plugin;
     }
 

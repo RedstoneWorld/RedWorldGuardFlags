@@ -60,9 +60,9 @@ The flag update after a flag change is dependent on the specific flag. Some flag
 | `sign-edit`             | Boolean           | Toggles whether players can edit placed signs (`#all_signs`). This affects describing the content, changing the color, applying the glowing effect, and waxing.                                                                                                  | allow         |
 | `allow-trading`         | Boolean           | Toggles whether players can trade with a villager or wandering trader. ² (subordinate to the "interact" flag)                                                                                                                                                    | allow         |
 
-² No item can be taken from the trade inventory and there are no XPs. The increasing [career level](https://minecraft.wiki/w/Trading#Level) and [trade stop](https://minecraft.wiki/w/Trading#Trades) are displayed in the GUI, but this is only on the client side and resets itself after the entity is addressed again.
-
 ¹ If the flag value is empty, the next lower region is requested as usual (inheritance without a combination). The default case (without entries) is like the Vanilla behavior: All blocks / entities are allowed for the action (if the player still has the primary region-rights like "build", "interact" or "damage-animals"). With existing entry, the "ALLOW" flag type is considered as a whitelist and everything else is disallowed, and the "DENY" flag type is considered as a blacklist and everything else is allowed. The "DENY" definition is queried before the "ALLOW" definition, which must be taken into account if both types are used!
+
+² No item can be taken from the trade inventory and there are no XPs. The increasing [career level](https://minecraft.wiki/w/Trading#Level) and [trade stop](https://minecraft.wiki/w/Trading#Trades) are displayed in the GUI, but this is only on the client side and resets itself after the entity is addressed again.
 
 ### Environment Flags
 

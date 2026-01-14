@@ -27,9 +27,6 @@ public class CreatureSpawn implements Listener {
     
     @EventHandler(priority = EventPriority.HIGH)
     public void onCreatureSpawn(CreatureSpawnEvent event) {
-        if ((event.getSpawnReason() != CreatureSpawnEvent.SpawnReason.SPAWNER_EGG) &&
-                (event.getSpawnReason() != CreatureSpawnEvent.SpawnReason.DISPENSE_EGG)) return;
-        
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(event.getLocation());
 
         // Spawn-egg using:
@@ -38,12 +35,22 @@ public class CreatureSpawn implements Listener {
             if (set.testState(null, (StateFlag) FlagManager.FlagEnum.SPAWNEGG_USE.getFlagObj())) return;
             
             event.setCancelled(true);
+            return;
         }
 
         // Spawn-egg dispensing:
         if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.DISPENSE_EGG) {
             // Check if the flag applies and if it is set to deny:
             if (set.testState(null, (StateFlag) FlagManager.FlagEnum.SPAWNEGG_DISPENSE.getFlagObj())) return;
+            
+            event.setCancelled(true);
+            return;
+        }
+
+        // Spawning by Vanilla mechanics:
+        if ((event.getSpawnReason() != CreatureSpawnEvent.SpawnReason.COMMAND) && (event.getSpawnReason() != CreatureSpawnEvent.SpawnReason.CUSTOM)) {
+            // Check if the flag applies and if it is set to deny:
+            if (set.testState(null, (StateFlag) FlagManager.FlagEnum.VANILLA_SPAWNING.getFlagObj())) return;
             
             event.setCancelled(true);
         }

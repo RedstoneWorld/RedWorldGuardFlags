@@ -38,6 +38,7 @@ public class FlagManager {
         SPAWNEGG_DISPENSE (new StateFlag("spawnegg-dispense", true)),
         SPAWNEGG_USE (new StateFlag("spawnegg-use", true)),
         STONE_GENERATION (new StateFlag("stone-generation", true)),
+        VANILLA_SPAWNING (new StateFlag("vanilla-spawning", true)),
         VEHICLE_ENTITY_COLLISION (new StateFlag("vehicle-entity-collision", true)),
         WEAVING_DEATH_PLACE (new StateFlag("weaving-death-place", true)),
         

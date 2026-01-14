@@ -26,7 +26,7 @@ public class BlockFade implements Listener {
         // Check if the flag applies and if it is set to deny:
         if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.FIRE_BURNING_OUT.getFlagObj())) {
 
-            // Check if the target block is "FIRE":
+            // Check if the target block is a fire block:
             if ((event.getBlock().getType() == Material.FIRE) || (event.getBlock().getType() == Material.SOUL_FIRE)) {
                 event.setCancelled(true);
             }

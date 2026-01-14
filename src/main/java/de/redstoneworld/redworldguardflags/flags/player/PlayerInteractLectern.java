@@ -45,7 +45,7 @@ public class PlayerInteractLectern implements Listener {
         ApplicableRegionSet set = WorldGuardUtil.getRegionSet(clickedBlock.getLocation());
 
         // Check if the flag applies and if it is set to deny
-        if (set.testState(null, (StateFlag) FlagManager.FlagEnum.LECTERN_BOOK_PLACE.getFlagObj())) {
+        if (!set.testState(null, (StateFlag) FlagManager.FlagEnum.LECTERN_BOOK_PLACE.getFlagObj())) {
 
             PlayerInventory playerInventory = event.getPlayer().getInventory();
             ItemStack bookItemStack = playerInventory.getItemInMainHand().clone();

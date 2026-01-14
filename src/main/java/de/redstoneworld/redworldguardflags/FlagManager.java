@@ -22,23 +22,24 @@ public class FlagManager {
 
     public enum FlagEnum {
         
-        DISPENSE_NBT_SPAWNEGGS (new StateFlag("dispense-nbt-spawneggs", true)),
-        VEHICLE_ENTITY_COLLISION (new StateFlag("vehicle-entity-collision", true)),
-        LECTERN_BOOK_PLACE (new StateFlag("lectern-book-place", true)),
-        SPAWNEGG_USE (new StateFlag("spawnegg-use", true)),
-        SPAWNEGG_DISPENSE (new StateFlag("spawnegg-dispense", true)),
-        ELYTRA_USE (new StateFlag("elytra-use", true)),
         ALLOW_FISHING (new StateFlag("allow-fishing", true)),
-        BOAT_BREAKTHROUGH (new StateFlag("boat-breakthrough", true)),
         ALLOW_TRADING (new StateFlag("allow-trading", true)),
+        BOAT_BREAKTHROUGH (new StateFlag("boat-breakthrough", true)),
+        DISPENSE_NBT_SPAWNEGGS (new StateFlag("dispense-nbt-spawneggs", true)),
+        ELYTRA_USE (new StateFlag("elytra-use", true)),
+        ENTITY_EATING_DESTROY (new StateFlag("entity-eating-destroy", true)),
+        ENTITY_LOOT_ITEMS (new StateFlag("entity-loot-items", true)),
         ENTITY_TARGET (new StateFlag("entity-target", true)),
         FIRE_BURNING_OUT (new StateFlag("fire-burning-out", true)),
-        WEAVING_DEATH_PLACE (new StateFlag("weaving-death-place", true)),
         INVENTORY_CLICK (new StateFlag("inventory-click", true)),
-        ENTITY_LOOT_ITEMS (new StateFlag("entity-loot-items", true)),
-        ENTITY_EATING_DESTROY (new StateFlag("entity-eating-destroy", true)),
-        STONE_GENERATION (new StateFlag("stone-generation", true)),
+        LECTERN_BOOK_PLACE (new StateFlag("lectern-book-place", true)),
+        RESET_BLOCKS (new IntegerFlag("reset-blocks", null)),
         SIGN_EDIT (new StateFlag("sign-edit", true)),
+        SPAWNEGG_DISPENSE (new StateFlag("spawnegg-dispense", true)),
+        SPAWNEGG_USE (new StateFlag("spawnegg-use", true)),
+        STONE_GENERATION (new StateFlag("stone-generation", true)),
+        VEHICLE_ENTITY_COLLISION (new StateFlag("vehicle-entity-collision", true)),
+        WEAVING_DEATH_PLACE (new StateFlag("weaving-death-place", true)),
         
         ALLOW_PLACE_BLOCKS (StringFlag.ALLOW_PLACE = new SetFlag<>("allow-place-blocks", new StringFlag(null, null))),
         DENY_PLACE_BLOCKS (StringFlag.DENY_PLACE = new SetFlag<>("deny-place-blocks", new StringFlag(null, null))),
@@ -51,9 +52,7 @@ public class FlagManager {
         DENY_INTERACT_ENTITY (StringFlag.DENY_ENTITY_INTERACT = new SetFlag<>("deny-interact-entity", new StringFlag(null, null))),
         
         ALLOW_DAMAGE_ENTITY (StringFlag.ALLOW_ENTITY_DAMAGE = new SetFlag<>("allow-damage-entity", new StringFlag(null, null))),
-        DENY_DAMAGE_ENTITY (StringFlag.DENY_ENTITY_DAMAGE = new SetFlag<>("deny-damage-entity", new StringFlag(null, null))),
-        
-        RESET_BLOCKS (new IntegerFlag("reset-blocks", null));
+        DENY_DAMAGE_ENTITY (StringFlag.DENY_ENTITY_DAMAGE = new SetFlag<>("deny-damage-entity", new StringFlag(null, null)));
         
         
         private final Flag<?> flag;
